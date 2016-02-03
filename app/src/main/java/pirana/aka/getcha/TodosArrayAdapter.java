@@ -41,4 +41,5 @@ public class TodosArrayAdapter extends ArrayAdapter<Todo> {
 
         return rowView;
     }
+
 }

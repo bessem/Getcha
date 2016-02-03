@@ -2,8 +2,11 @@ package pirana.aka.getcha;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 
 import pirana.aka.getcha.db.TodoOperations;
+import pirana.aka.getcha.model.Todo;
 
 public class GetchaListActivity extends ListActivity {
 
@@ -19,5 +22,12 @@ public class GetchaListActivity extends ListActivity {
             opInstance.addTodo(todo);
         }*/
         setListAdapter(new TodosArrayAdapter(this,opInstance.getAllTodos()));
+    }
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+
+        //get selected items
+        Todo selectedValue = (Todo) getListAdapter().getItem(position);
+
     }
 }
